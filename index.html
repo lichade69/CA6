@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Richard Yang">
+    <title>Bear Ninja Hunter</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="playerChoice"></div>
+    <script>
+        // get the name of the player
+        let name = prompt('Welcome to Bear Ninja Hunter! Please enter your name to get started:');
+
+        // greet the player
+        alert('Hi ' + name + ', let\'s play!!');
+
+        // get the player's choice
+        let choice = prompt('Who are you: Bear, Ninja, or Hunter?');
+
+        // display the player's choice
+        document.getElementById('playerChoice').innerHTML = choice;
+
+        // log the player's choice to the console
+        console.log(choice);
+    </script>
+</body>
+
+</html>
