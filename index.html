@@ -10,7 +10,16 @@
 </head>
 
 <body>
-    <div id="playerChoice"></div>
+    <h1>Bear Ninja Hunter</h1>
+    <div>
+        hi <span id="playerName"></span>, you chose <span id="playerChoice"></span>
+    </div>
+    <div>
+        computer chose <span id="computerChoice"></span>
+    </div>
+    <div>
+        game result: <span id="gameResult"></span>
+    </div>
     <script>
         // get the name of the player
         let name = prompt('Welcome to Bear Ninja Hunter! Please enter your name to get started:');
@@ -18,14 +27,82 @@
         // greet the player
         alert('Hi ' + name + ', let\'s play!!');
 
+        // display the player's name
+        document.getElementById('playerName').innerHTML = name;
+
         // get the player's choice
-        let choice = prompt('Who are you: Bear, Ninja, or Hunter?');
+        let playerChoice = prompt('Who are you: Bear, Ninja, or Hunter?');
 
         // display the player's choice
-        document.getElementById('playerChoice').innerHTML = choice;
+        document.getElementById('playerChoice').innerHTML = playerChoice;
 
         // log the player's choice to the console
-        console.log(choice);
+        console.log(playerChoice);
+
+        // set computer choice to bear
+        let computerChoice = 'Bear';
+
+        // display the computer's choice
+        document.getElementById('computerChoice').innerHTML = computerChoice;
+
+        let gameStatus;
+
+        if (playerChoice === 'Bear') {
+            switch (computerChoice) {
+                case 'Bear': {
+                    gameStatus = 'Tie';
+                    break;
+                }
+                case 'Ninja': {
+                    gameStatus = 'Win';
+                    break;
+                }
+                case 'Hunter': {
+                    gameStatus = 'Lose';
+                    break;
+                }
+            }
+        }
+        else if (playerChoice === 'Ninja') {
+            switch (computerChoice) {
+                case 'Bear': {
+                    gameStatus = 'Lose';
+                    break;
+                }
+                case 'Ninja': {
+                    gameStatus = 'Tie';
+                    break;
+                }
+                case 'Hunter': {
+                    gameStatus = 'Win';
+                    break;
+                }
+            }
+        }
+        else if (playerChoice === 'Hunter') {
+            switch (computerChoice) {
+                case 'Bear': {
+                    gameStatus = 'Win';
+                    break;
+                }
+                case 'Ninja': {
+                    gameStatus = 'Lose';
+                    break;
+                }
+                case 'Hunter': {
+                    gameStatus = 'Tie';
+                    break;
+                }
+            }
+        }
+        else {
+            alert('Invalid choice!');
+        }
+    
+        alert('You ' + gameStatus + '!');
+
+        // display the game result
+        document.getElementById('gameResult').innerHTML = `you ${gameStatus}`;
     </script>
 </body>
 
